@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+
+    <h1 id="titulo_P">Lista de Produtos</h1>
+
+    <a href="#">Novo Produto</a>
+
+    <hr>
+
+    {% for produto in produtos %}
+        <p class="produtos"><strong>Nome:</strong> {{ produto.nome }}</p>
+        <p><strong class="produtos">Preço:</strong> {{ produto.preco }}</p>
+        <p><strong class="produtos">Quantidade:</strong> {{ produto.quantidade }}</p>
+
+        <a href="#">Editar</a>
+        <a href="#">Excluir</a>
+
+        <hr>
+    {% endfor %}
+
+</div>
+{% endblock %}
