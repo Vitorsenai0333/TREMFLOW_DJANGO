@@ -1,18 +1,14 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>ShopFlow</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 
     <nav>
-        <a href="/">Home</a>
-        <a href="/produtos/">Produtos</a>
-        <a href="/pedidos/">Pedidos</a>
-        <a href="/accounts/logout/">Sair</a>
+        <a href="{% url 'home' %}">Home</a> |
+        <a href="{% url 'produtos' %}">Produtos</a>
     </nav>
 
     <hr>

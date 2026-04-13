@@ -1,24 +1,14 @@
-{% extends 'base.html' %}
+<h1>Produtos</h1>
 
-{% block content %}
-<div class="container">
+<a href="{% url 'criar_produto' %}">Novo Produto</a>
 
-    <h1 id="titulo_P">Lista de Produtos</h1>
-
-    <a href="#">Novo Produto</a>
-
-    <hr>
-
+<ul>
     {% for produto in produtos %}
-        <p class="produtos"><strong>Nome:</strong> {{ produto.nome }}</p>
-        <p><strong class="produtos">Preço:</strong> {{ produto.preco }}</p>
-        <p><strong class="produtos">Quantidade:</strong> {{ produto.quantidade }}</p>
+        <li>
+            {{ produto.nome }} - R$ {{ produto.preco }} - Qtd: {{ produto.quantidade }}
 
-        <a href="#">Editar</a>
-        <a href="#">Excluir</a>
-
-        <hr>
+            <a href="{% url 'editar_produto' produto.id %}">Editar</a>
+            <a href="{% url 'deletar_produto' produto.id %}">Deletar</a>
+        </li>
     {% endfor %}
-
-</div>
-{% endblock %}
+</ul>
