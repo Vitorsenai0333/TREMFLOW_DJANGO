@@ -58,14 +58,25 @@ venv\Scripts\activate
 ```bash
 pip install django djangorestframework
 ```
+
 ---
 
 ### 4. Rodar as migrações
 
 ```bash
+python manage.py makemigrations
 python manage.py migrate
 ```
+
+⚠️ IMPORTANTE:  
+Se aparecer erro como **"no such table"** ou aviso de **migrations não aplicadas**, rode novamente:
+
+```bash
+python manage.py migrate
+```
+
 ---
+
 ### 5. Criar usuário admin
 
 ```bash
@@ -85,6 +96,7 @@ Abrir no navegador:
 ```
 http://127.0.0.1:8000/
 ```
+
 ---
 
 ## 🔐 Admin
@@ -92,6 +104,7 @@ http://127.0.0.1:8000/
 ```
 http://127.0.0.1:8000/admin/
 ```
+
 ---
 
 ## 🌐 Rotas principais (site)
@@ -102,20 +115,20 @@ http://127.0.0.1:8000/admin/
 * `/pedidos/` → Lista de pedidos
 
 ---
-##  Rotas da API (JSON)
+
+## Rotas da API (JSON)
 
 Você consegue acessar os dados em formato JSON pelas rotas:
 
 * `/api/clientes/`
 * `/api/produtos/`
 * `/api/pedidos/`
-```
 
 Ou seja, dá pra consumir esses dados via API normalmente.
 
 ---
 
-##  Interface
+## Interface
 
 O sistema segue um padrão escuro com:
 
@@ -142,6 +155,7 @@ Se eu fosse continuar o projeto, daria pra melhorar com:
 ## Sobre mim
 
 Esse projeto foi feito por mim como parte de aprendizado e prática com Django.
+
 ---
 
 Licença
